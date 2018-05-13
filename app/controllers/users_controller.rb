@@ -11,7 +11,6 @@ class UsersController < ApplicationController
   
   def create
     @user = User.new(user_params)
-    @blog = current_user.blogs.new(blog_params)
     if @user.save
       redirect_to user_path(@user.id)
     else
