@@ -1,0 +1,23 @@
+<h1><%= @user.name %>のページ</h1>
+
+<p>メールアドレス: <%= @user.email %></p>
+
+<h2>お気に入りブログ一覧</h2>
+
+<table>
+  <tr>
+    <th>タイトル</th>
+    <th>内容</th>
+  </tr>
+
+<% @favorite_blogs.each do |favorite_blogs| %>
+  <tr>
+    <td><%= favorite_blogs.title %></td>
+    <td><%= favorite_blogs.content %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'ブログ一覧画面にもどる', blogs_path %>
+
+
