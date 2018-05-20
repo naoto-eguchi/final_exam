@@ -58,6 +58,8 @@ gem 'bcrypt', '3.1.11'
 
 gem 'dotenv-rails'
 
+gem 'letter_opener_web'
+
 group :development do
   gem 'letter_opener_web'
 end
