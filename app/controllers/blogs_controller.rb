@@ -5,6 +5,7 @@ class BlogsController < ApplicationController
   def current_user
     @current_user ||= User.find_by(id: session[:user_id])
   end
+  
   def logged_in?
       if current_user.nil?
         redirect_to new_session_path
@@ -22,7 +23,8 @@ class BlogsController < ApplicationController
   def create
     @blog = current_user.blogs.new(blog_params)
     if @blog.save
-      redirect_to new_blog_path,　notice: "ブログを作成しました！"
+      BlogMailer.blog_mail(@blog).deliver
+      redirect_to new_blog_path, notice: "ブログを作成しました！"
     else
       render "new"
     end
