@@ -11,12 +11,8 @@ Rails.application.routes.draw do
   resources :contacts do
   end
   
-  if Rails.env.development?
+  if Rails.env.development? || Rails.env.production?
   mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
   
-  if Rails.env
-  mount LetterOpenerWeb::Engine, at: "/letter_opener"
-  end
-
 end
