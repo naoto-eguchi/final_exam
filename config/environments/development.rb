@@ -44,7 +44,7 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   
-  config.action_mailer.default_url_options = { host: 'dic-rr-naoto725.c9users.io/' }
+  config.action_mailer.default_url_options = { host: 'secret-wave-86199.herokuapp.com/' }
   config.action_mailer.delivery_method = :letter_opener
 
 end
