@@ -6,7 +6,12 @@
 
   <p>タイトル:<%= @blog.title %></p>
   <p>本文:<%= @blog.content %></p>
-  <%= form.submit  "登録する" %>
+  <br/>
+  <br/>
+  <%= image_tag(@blog.image.url) %>
+  <%= hidden_field_tag :"cache[image]",@blog.image.cache_name %>
+  <br/>
+  <%= form.submit  "送信する" %>
 <% end %>
 
 <%= form_with(model: @blog, url: new_blog_path, local: true, method: 'get') do |form| %>

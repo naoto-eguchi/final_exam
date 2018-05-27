@@ -18,5 +18,14 @@
     <%= form.label :content %>
     <%= form.text_field :content %>
   </div>
+  
+  <div class="field">
+    <%= form.label :image %><br/><br/>
+    <%= image_tag(@blog.image.url) if @blog.image.url %>
+    <%= form.file_field :image, id: :blog_image %>
+    <%= form.hidden_field :image_cache %>
+  </div>
+  <br/>
   <%= form.submit %>
+  <br/>
 <% end %>
