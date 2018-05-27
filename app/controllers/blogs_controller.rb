@@ -30,7 +30,7 @@ class BlogsController < ApplicationController
       @blog.image.retrieve_from_cache!params[:cache][:image]
     if @blog.save
       BlogMailer.blog_mail(@blog).deliver
-      redirect_to new_blog_path, notice: "ブログを作成しました！"
+      redirect_to blog_path(@blog.id), notice: "ブログを作成しました！"
     else
       render "new"
     end
