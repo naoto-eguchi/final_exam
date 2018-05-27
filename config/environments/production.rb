@@ -92,8 +92,8 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'secret-wave-86199.herokuapp.com/' }
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
-    user_name: ENV['app96424595@heroku.com'],
-    password: ENV['qqnhcfpc1085'],
+    user_name: ENV['SENDGRID_USERNAME'],
+    password: ENV['SENDGRID_PASSWORD'],
     domain: "heroku.com",
     address: "smtp.SendGrid.net",
     port: 587,
