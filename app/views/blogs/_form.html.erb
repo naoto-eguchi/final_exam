@@ -1,4 +1,5 @@
 <%= form_with(model: @blog, local: true,url: choose_new_or_edit) do |form| %>
+<div class="blogs">
   <% if @blog.errors.any? %>
     <div id="error_explanation">
       <h2><%= @blog.errors.count %>件のエラーがあります。</h2>
@@ -28,4 +29,5 @@
   <br/>
   <%= form.submit %>
   <br/>
+  </div>
 <% end %>

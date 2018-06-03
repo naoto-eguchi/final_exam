@@ -9,6 +9,7 @@
 
 <h2>お気に入りブログ一覧</h2>
 
+<div class="favorite_blogs">
 <table>
   <tr>
     <th>タイトル</th>
@@ -22,9 +23,9 @@
   </tr>
 <% end %>
 </table>
-
-
- <%= link_to 'ブログ一覧画面にもどる', blogs_path %>
+</div>
+</br>
+ <%= link_to 'ブログ一覧画面にもどる', blogs_path,class: "btn btn-primary" %>
 
 
 

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "sessions#new"
+  root to: "tops#top"
   resources :favorites, only: [:create, :destroy]
   resources :users, only: [:new, :create, :show]
   resources :sessions, only: [:new, :create, :destroy]
