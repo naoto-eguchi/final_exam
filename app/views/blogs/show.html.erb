@@ -1,12 +1,8 @@
 <h1>ブログ詳細画面</h1>
 <p>タイトル: <%= @blog.title %></p>
-<p>内容: <%= @blog.content %></p>
-<br/>
-<br/>
-<p>
-  <strong>Image:</strong><br/>
-  <%= image_tag @blog.image %>
-</p>
+<p>音声<br><%= audio_tag @blog.audio, :controls => true %></p>
+<p>投稿者:<%= @blog.user.name%></p>
+<p><%= image_tag @blog.user.image%></p>
 
 <% unless @blog.user == current_user %>
   <% if @favorite.present? %>

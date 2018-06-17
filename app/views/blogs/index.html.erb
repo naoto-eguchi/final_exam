@@ -1,23 +1,26 @@
 <h1>ブログ一覧</h1>
 
 <div class="container-fluid blogs">
-<table>
+<table class="table_contents">
   <tr>
     <th>タイトル</th>
     <th>内容</th>
+    <th>投稿者</th>
+    <th>投稿日時</th>
   </tr>
 
 <% @blogs.each do |blog| %>
   <tr>
     <td><%= blog.title %></td>
-    <td><%= blog.content %></td>
-    <td><%= link_to '詳細を確認する', blog_path(blog.id),class: "btn btn-default"%></td>
+    <td><%= audio_tag blog.audio,:controls => true %></td>
+    <td><%= blog.user.name%></td>
+    <td><%= blog.created_at %></td>
+    <td><%= link_to '詳細', blog_path(blog.id),class: "btn btn-default"%></td>
     
     <% if blog.user_id == current_user.id %>
-    <td><%= link_to 'ブログを編集する', edit_blog_path(blog.id),class: "btn btn-info"%></td>
-    <td><%= link_to 'ブログを削除する', blog_path(blog.id), method: :delete,class: "btn btn-danger" %></td>
+    <td><%= link_to '編集', edit_blog_path(blog.id),class: "btn btn-info"%></td>
+    <td><%= link_to '削除', blog_path(blog.id), method: :delete,class: "btn btn-danger" %></td>
     <% end %>
-    
   </tr>
 <% end %>
 </table>

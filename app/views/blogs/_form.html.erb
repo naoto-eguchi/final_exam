@@ -15,17 +15,14 @@
     <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
-  <div class="blog_title">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
+  <br/>
+  <div class="field">
+    <%= form.label :投稿音声 %><br/>
+    <%= audio_tag(@blog.audio.url) if @blog.audio.url %>
+    <%= form.file_field :audio, id: :blog_audio %>
+    <%= form.hidden_field :audio_cache %>
   </div>
   
-  <div class="field">
-    <%= form.label :image %><br/><br/>
-    <%= image_tag(@blog.image.url) if @blog.image.url %>
-    <%= form.file_field :image, id: :blog_image %>
-    <%= form.hidden_field :image_cache %>
-  </div>
   <br/>
   <%= form.submit %>
   <br/>

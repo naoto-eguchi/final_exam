@@ -2,18 +2,15 @@
 
 <%= form_with(model: @blog, url: blogs_path, local: true) do |form| %>
   <%= form.hidden_field :title %>
-  <%= form.hidden_field :content %>
 
   <p>タイトル:<%= @blog.title %></p>
-  <p>本文:<%= @blog.content %></p>
-  <br/>
-  <br/>
-  <%= image_tag(@blog.image.url) %>
-  <%= hidden_field_tag :"cache[image]",@blog.image.cache_name %>
+  <br>
+  <p>投稿音声<br><%= audio_tag(@blog.audio.url,:controls => true)%></p>
+  <%= hidden_field_tag :"cache[audio]",@blog.audio.cache_name %>
   <br/>
   <%= form.submit  "送信する" %>
 <% end %>
-
+　<br/>
 <%= form_with(model: @blog, url: new_blog_path, local: true, method: 'get') do |form| %>
   <%= form.hidden_field :title %>
   <%= form.hidden_field :content %>

@@ -1,5 +1,6 @@
 .wrap {
   overflow: hidden;
+  padding-bottom: 100px;
 }
 
 header {
@@ -49,6 +50,7 @@ html {
 
 body {
   text-align: center;
+  margin: 0;
   }
 
 .jumbotron {

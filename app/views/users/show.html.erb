@@ -10,7 +10,7 @@
 <h2>お気に入りブログ一覧</h2>
 
 <div class="favorite_blogs">
-<table>
+<table class="table_contents">
   <tr>
     <th>タイトル</th>
     <th>内容</th>
@@ -19,7 +19,7 @@
 <% @favorite_blogs.each do |favorite_blogs| %>
   <tr>
     <td><%= favorite_blogs.title %></td>
-    <td><%= favorite_blogs.content %></td>
+    <td><%= audio_tag favorite_blogs.audio,:controls => true%></td>
   </tr>
 <% end %>
 </table>
