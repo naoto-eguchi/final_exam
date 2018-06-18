@@ -1,0 +1,14 @@
+ja:
+  activerecord:
+    models:
+      blog: "ブログ"
+      user: "ユーザー"
+      favorite: "お気に入り"
+    attributes:
+      blog:
+        title: "タイトル"
+        audio: "音声"
+      user:
+        title: "タイトル"
+        name: "名前"
+        email: "メールアドレス"

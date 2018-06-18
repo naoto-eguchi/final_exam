@@ -14,7 +14,7 @@
     <td><%= blog.title %></td>
     <td><%= audio_tag blog.audio,:controls => true %></td>
     <td><%= blog.user.name%></td>
-    <td><%= blog.created_at %></td>
+    <td><%= blog.created_at.in_time_zone('Tokyo').strftime("%Y-%m-%d %H:%M")%></td>
     <td><%= link_to '詳細', blog_path(blog.id),class: "btn btn-default"%></td>
     
     <% if blog.user_id == current_user.id %>
